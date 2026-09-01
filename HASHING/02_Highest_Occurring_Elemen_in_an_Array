@@ -1,0 +1,22 @@
+class Solution:
+    def mostFrequentElement(self, nums):
+
+        freq = {}
+
+        # Count frequency
+        for i in nums:
+            if i in freq:
+                freq[i] += 1
+            else:
+                freq[i] = 1
+
+        max_freq = 0
+        most_frequent = 0
+
+        # Find element with maximum frequency
+        for i in freq:
+            if freq[i] > max_freq:
+                max_freq = freq[i]
+                most_frequent = i
+
+        return most_frequent
