@@ -1,0 +1,19 @@
+class Solution:
+    def secondLargestElement(self, nums):
+
+        largest = nums[0]
+        sec_largest = None
+
+        for i in nums[1:]:
+            if i > largest:
+                sec_largest = largest
+                largest = i
+
+            elif i < largest and (sec_largest is None or i> sec_largest):
+                sec_largest = i
+
+        if sec_largest is None:
+            return-1
+
+        return sec_largest
+        
